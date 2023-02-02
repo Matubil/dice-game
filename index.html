@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Ver de esta clase a partir de la hora y media hasta el break -->
+    <div class="title">
+        <h1 class="title__text">Juego de Dados</h1>
+    </div>
+    <!-- ctrl + shift + h cambia todos los elementos de mi proyecto que busque
+        ctrl + h cambia solo los elementos del elemento en el que estoy buscando
+    ctrl + d voy seleccionando los mismos al que seleccione -->
+    <div class="player-names">
+        <form onsubmit="tomarNombresDeJugadores(event)" id="form-names">
+            <div>
+                <label for="">Player 1</label>
+                <input type="text" name="player1" required minlength="5" maxlength="25">
+            </div>
+            <div>
+                <label for="">Player 2</label>
+                <input type="text" name="player2" required minlength="5" maxlength="25">
+            </div>
+            <button type="submit">Cargar jugador</button>
+        </form>
+    </div>
+    <div class="game-container hidden" id="game-container">
+        <div class="player">
+            <div class="player__nombre" id="player1name">
+                Jugador 1
+            </div>
+            <div class="dices-container">
+                <div class="dice">
+                    <img class="dice__img" id="p1-d1" src="/assets/images/dice/dice-1.png" alt="">
+                </div>
+                <div class="dice">
+                    <img class="dice__img" id="p1-d2" src="/assets/images/dice/dice-5.png" alt="">
+                </div>
+            </div>
+            <div class="player__btn-container">
+                <button class="player__btn" onclick="lanzarDados(1,event)">
+                    LANZAR DADOS
+                </button>
+            </div>
+            <div class="player__score">
+                <div class="player__score-text">
+                    Puntuación
+                </div>
+                <div class="player__score-number" id="score1">
+                    10
+                </div>
+            </div>
+
+
+        </div>
+        <div class="player">
+            <div class="player__nombre" id="player2name">
+                Jugador 2
+            </div>
+            <div class="dices-container">
+                <div class="dice">
+                    <img class="dice__img" id="p2-d1" src="/assets/images/dice/dice-1.png" alt="">
+                </div>
+                <div class="dice">
+                    <img class="dice__img" id="p2-d2" src="/assets/images/dice/dice-5.png" alt="">
+                </div>
+            </div>
+            <div class="player__btn-container">
+                <button class="player__btn" onclick="lanzarDados(2,event)">
+                    LANZAR DADOS
+                </button>
+            </div>
+            <div class="player__score">
+                <div class="player__score-text">
+                    Puntuación
+                </div>
+                <div class="player__score-number" id="score2">
+                    10
+                </div>
+            </div>
+        </div>
+        <div>
+            <h1 id="ganador"></h1>
+        </div>
+    </div>
+
+    <script src="/js/dice-game.js"></script>
+</body>
+</html>
